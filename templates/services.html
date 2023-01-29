@@ -1,0 +1,110 @@
+{% extends 'index.html' %}
+{% block title %} services {% endblock title %}
+
+{%block body%} 
+<div class="Headingss"><h1>Featured Products</h1></div>
+<div class=" feature">
+    {%for i in pros1%}
+
+          <div class="card">
+            {%if i.pic1%}
+            <img class="card-img-top" src="{{i.pic1.url}}" alt="Card image cap" >
+            {%endif%}
+            <div class="card-body">
+                
+                <p class="card-text"></a>>{{i.label}}</p>
+            
+                <p class="card-text1">rating:-{{i.rating}}</p>
+                <p class="card-text2">$ {{i.price}}</p>
+                <a href='/Detail/{{i.label}}' >details</a>
+                
+            </div>
+
+          </div>
+          
+          {%endfor%}
+        </div>
+        <div class="center">
+            <div class="pagination">
+            {%if pros1.has_previous%}
+                <a href="services?page={{pros1.previous_page_number}}">&laquo;</a>
+            {%endif%}
+                {% for x in totalPageList1%}
+                <a href="services?page={{x}}">{{x}}</a>
+                {%endfor%}
+                
+            {%if pros1.has_next%}
+    
+                <a href="services?page={{pros1.next_page_number}}">&raquo;</a>
+            {%endif%}
+
+            </div>
+           
+        </div>
+        <div class="Headingss"><h1>Featured Products</h1></div>
+        <div class=" feature">
+            {%for i in pros2%}
+        
+                  <div class="card">
+                    {%if i.pic1%}
+                    <img class="card-img-top" src="{{i.pic1.url}}" alt="Card image cap" >
+                    {%endif%}
+                    <div class="card-body">
+                        <p class="card-text">{{i.label}}</p>
+                        <p class="card-text1">rating:-{{i.rating}}</p>
+                        <p class="card-text2">$ {{i.price}}</p>
+                        <a href='/Details/{{i.label}}' >details</a>
+                    </div>
+                  </div>
+        
+                  {%endfor%}
+                </div>
+                <div class="center">
+                    <div class="pagination">
+                    {%if pros2.has_previous%}
+                        <a href="services?page={{pros2.previous_page_number}}">&laquo;</a>
+                    {%endif%}
+                        {% for x in totalPageList2%}
+                        <a href="services?page={{x}}">{{x}}</a>
+                        {%endfor%}
+                        
+                    {%if pros2.has_next%}
+            
+                        <a href="services?page={{pros2.next_page_number}}">&raquo;</a>
+                    {%endif%}
+                    </div>
+                </div>
+                <div class="Headingss"><h1>Featured Products</h1></div>
+<div class=" feature">
+    {%for i in pros3%}
+
+          <div class="card">
+            {%if i.pic1%}
+            <img class="card-img-top" src="{{i.pic1.url}}" alt="Card image cap" >
+            {%endif%}
+            <div class="card-body">
+                <p class="card-text">{{i.label}}</p>
+                <p class="card-text1">rating:-{{i.rating}}</p>
+                <p class="card-text2">$ {{i.price}}</p>
+                <a href='/Detailse/{{i.label}}' >details</a>
+            </div>
+          </div>
+
+          {%endfor%}
+        </div>
+        <div class="center">
+            <div class="pagination">
+            {%if pros3.has_previous%}
+                <a href="services?page={{pros3.previous_page_number}}">&laquo;</a>
+            {%endif%}
+                {% for x in totalPageList3%}
+                <a href="services?page={{x}}">{{x}}</a>
+                {%endfor%}
+                
+            {%if pros3.has_next%}
+    
+                <a href="services?page={{pros3.next_page_number}}">&raquo;</a>
+            {%endif%}
+            </div>
+        </div>
+{%endblock body%}

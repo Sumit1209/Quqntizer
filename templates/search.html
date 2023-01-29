@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% block title %} search {% endblock title %}
+
+{%block body%} 
+<div class="Headingss"><h1>Search  Products</h1></div>
+
+{%if stu|length < 1  %}
+<p> No search result </p>
+Your search query -<b> {{nameName}} </b>- did not match any documents.
+<p>Suggestions:</p>
+<ul>
+
+<li>Make sure that all words are spelled correctly.</li>
+<li>Try different keywords.</li>
+<li>Try more general keywords.</li>
+</ul>
+
+{%endif%}
+
+
+
+
+
+<div class=" feature">
+    {%for i in stu%}
+
+          <div class="card">
+            {%if i.pic1%}
+            <img class="card-img-top" src="{{i.pic1.url}}" alt="Card image cap" >
+            {%endif%}
+            <div class="card-body">
+                
+                <p class="card-text"></a>>{{i.label}}</p>
+            
+                <p class="card-text1">rating:-{{i.rating}}</p>
+                <p class="card-text2">$ {{i.price}}</p>
+                <a href='/Detail/{{i.label}}' >details</a>
+                
+            </div>
+
+          </div>
+          
+          {%endfor%}
+        </div>
+
+
+
+      
+{%endblock body%}

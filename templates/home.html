@@ -1,0 +1,93 @@
+{% extends 'index.html' %}
+{% block title %} Home {% endblock title %}
+
+{%block body%} 
+<section class=" background1 firstSection"  id="About">
+    <div class="box-main">
+        <div class="firsthalf">
+            {%for i in def %}
+            <h1 class="text-big">{{i.heading}}</h1>
+           <p class="text-small">{{i.subheading}}</p>
+           {%endfor  %}
+        
+           <div class="button">
+            <button class="btn1"><a href='/services'>Explore here</a></button>
+        </div>
+
+        </div>
+        
+    </div>
+
+</section>
+<section >
+    <div class="pic">
+    <div class="pic1">
+        <div ><button ><a href=""><img src="static/style1.jpg" alt="" ></a></div></button>
+        <div ><img src="static/style2.jpg" alt="" ></div>
+        <div ><img src="static/style3.jpg" alt="" ></div>
+    </div>
+</div>
+    
+    </section>
+    <div class="Headingss"><h1>Featured Products</h1></div>
+<section>
+
+        <div class=" feature">
+    {%for i in pros%}
+
+          <div class="card">
+            {%if i.pic1%}
+            <img class="card-img-top" src="{{i.pic1.url}}" alt="Card image cap" >
+            {%endif%}
+            <div class="card-body">
+                <p class="card-text">{{i.label}}</p>
+                <p class="card-text1">rating:-{{i.rating}}</p>
+                <p class="card-text2">$ {{i.price}}</p>
+            </div>
+          </div>
+
+          {%endfor%}
+        </div>
+        <div >
+            <a href='/services' role="button" style="position: absolute; right: 25px;">More items-></a>
+        </div>
+    <div class="center">
+        <div class="pagination">
+        {%if pros.has_previous%}
+            <a href="/?page={{pros.previous_page_number}}">&laquo;</a>
+        {%endif%}
+            {% for x in totalPageList%}
+            <a href="/?page={{x}}">{{x}}</a>
+            {%endfor%}
+            
+        {%if pros.has_next%}
+
+            <a href="/?page={{pros.next_page_number}}">&raquo;</a>
+        {%endif%}
+        </div>
+    </div>
+</section>
+
+<section class="background2">
+    <div class="box-main2">
+      <div class="firsthalf2">
+          <h1 class="text-big2">Exclusive aviable</h1>
+         <p class="text-small2">In this world of 7 million people we need to educate all of them .This is the future of an educated world and we proud to say that the future of education is here</p>
+      <div class="button">
+          <button class="btn2">Buy Now</button>
+
+      </div>
+      </div>
+
+  </section>
+<!-- <section>
+    <div class="brand">
+    <img  class="card-img-top"src="img/style1.jpg">  
+    <img  class="card-img-top"src="img/style1.jpg">  
+    <img  class="card-img-top"src="img/style1.jpg">  
+
+    </div>
+  </section>
+  --> 
+
+{%endblock body%}
