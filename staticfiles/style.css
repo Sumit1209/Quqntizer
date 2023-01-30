@@ -63,11 +63,11 @@ html{
     padding:0 23px;
 
 }
-#search {
+#nameName {
     padding:5px;
     font-size:17px;
     border-radius: 9px;
-    border: 2px solid grey;
+    border: 2px solid rgb(233, 106, 106);
 
 }
 .background{

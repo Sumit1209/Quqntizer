@@ -114,6 +114,9 @@
 
 .card{
     width: 14rem;
+    /* border: 2px solid blue; */
+    padding: 25px;
+    background: #e5e5e5;
 }
 
 
